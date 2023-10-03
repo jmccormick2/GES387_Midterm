@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Midterm</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+
+    </head>
+
+    <body>
+	<h1>Welcome to NEIU</h1>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.9794789, -87.7188527],
+              zoom: 16.9
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 16.3,
+               minZoom: 4
+            }).addTo(map);
+
+        var eagleIcon = L.icon({
+              iconUrl: 'eagle.png', // url that links to the icon image file
+              iconSize:     [15, 15], // size of the icon image in pixels
+              iconAnchor:   [5, 5], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+              popupAnchor:  [0, -2] // point from which the popup should open, relative to the iconAnchor
+          });
+var marker1 = L.marker([41.980755, -87.716782], {icon: eagleIcon}).addTo(map);
+var marker2 = L.marker([41.981107, -87.717313], {icon: eagleIcon}).addTo(map);
+var marker3 = L.marker([41.9791411,-87.7200539], {icon: eagleIcon}).addTo(map);
+var marker4 = L.marker([41.9798335,-87.7182901], {icon: eagleIcon}).addTo(map);
+var marker5 = L.marker([41.980706, -87.718755], {icon: eagleIcon}).addTo(map);
+var marker6 = L.marker([41.982107, -87.719009], {icon: eagleIcon}).addTo(map);
+
+var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg" alt="BBH" width="100">';
+var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Teacher_at_blackboard_%281924%29.jpg" alt="Teacher" width="100">';
+var pic3 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Northeastern_Illinois_University_%28logo%29.png" alt="Nest" width="100">';
+ var pic4 = '<img src="https://upload.wikimedia.org/wikipedia/commons/3/31/PBS_2008_DNC_%282798660511%29.jpg" alt="WTTW" width="100">';  
+ var pic5 = '<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/NEIU_Library_%28117983928%29.jpg" alt="Lib" width="100">'; 
+ var pic6 = '<img src="https://upload.wikimedia.org/wikipedia/commons/7/77/NEIU_3.jpg" alt="SU" width="100">'; 
+ 
+		 marker1.bindPopup('<p style="color:blue; font-weight:bold"> NEIU SCIENCE BUILDING(BBH)<br/>Home to GES Department </p>' + pic1);
+          marker2.bindPopup('<p style="color:blue; font-weight:bold"> Chicago Teachers College</p>' + pic2);
+marker3.bindPopup('<p style="color:blue; font-weight:bold"> The Nest<br/> NEIU Student Housing</p>' + pic3);
+marker4.bindPopup('<p style="color:blue; font-weight:bold"> WTTW Studios</p>' + pic4);
+marker5.bindPopup('<p style="color:blue; font-weight:bold"> NEIU Library<br/>Tutoring Center</p>' + pic5);
+marker6.bindPopup('<p style="color:blue; font-weight:bold"> Student Union Complex</p>' + pic6);
+        </script>
+   </body>
+</html>
